@@ -7,14 +7,14 @@ using Serializing = Attraction.Core.Serializing;
 using Svg = Attraction.Svg;
 using Platform = Kean.Platform;
 
-namespace Example.ClickOverlay
+namespace Example.QuadView
 {
 	public class ClickOverlay : 
 		Imint.Viewer.Overlay,
 		IClickOverlay
 	{
-		public override string Type { get { return "OverlayThingy:IClickOverlay"; } }
-		public override string Remote { get { return "OverlayThingy:Remote.ClickOverlay"; } }
+		public override string Type { get { return "Example.QuadView:IClickOverlay"; } }
+		public override string Remote { get { return "Example.QuadView:Remote.ClickOverlay"; } }
 		Geometry2D.Single.Point position;
 		[Notify("PositionChanged")]
 		[Platform.Settings.Property("position")]

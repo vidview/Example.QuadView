@@ -1,7 +1,7 @@
-Example.Simple
+Example.QuadView
 ==============
 
-This example demonstrates an invisible overlay that covers the viewer and reacts to being clicked on. 
+This example demonstrates a simple Quad View application where 4 video sources can be viewed at the same time.
 
 Checking out:
 -------------

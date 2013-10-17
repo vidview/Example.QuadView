@@ -7,8 +7,8 @@
     <ProjectGuid>{0C09C114-4A11-4C5C-AB64-B079915EFC79}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Example.ClickOverlay</RootNamespace>
-    <AssemblyName>Example.ClickOverlay</AssemblyName>
+    <RootNamespace>Example.QuadView</RootNamespace>
+    <AssemblyName>Example.QuadView</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -104,6 +104,9 @@
     </Reference>
     <Reference Include="Imint.Vidview.Sample.UserControl">
       <HintPath>..\packages\Imint.Vidview.Sample.UserControl.2.8.0.3741\lib\net40\Imint.Vidview.Sample.UserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Imint.Vidview.Window">
+      <HintPath>..\packages\Imint.Vidview.Window.2.8.0.3741\lib\net40\Imint.Vidview.Window.exe</HintPath>
     </Reference>
     <Reference Include="Imint.Viewer, Version=2.8.0.3741, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -315,9 +318,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Configuration\Overlay\Video\CenterMark.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Configuration\Overlay\Video\ClickOverlay.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Imint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

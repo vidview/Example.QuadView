@@ -7,7 +7,7 @@ using Serializing = Attraction.Core.Serializing;
 using Svg = Attraction.Svg;
 using Platform = Kean.Platform;
 
-namespace Example.ClickOverlay.Remote
+namespace Example.QuadView.Remote
 {
 	public class ClickOverlay :
 		Imint.Viewer.Remote.Overlay,

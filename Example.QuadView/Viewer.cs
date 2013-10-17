@@ -1,8 +1,9 @@
 using System;
 using Forms = System.Windows.Forms;
 using Settings = Kean.Platform.Settings;
+using Kean.Core.Extension;
 
-namespace Example.ClickOverlay
+namespace Example.QuadView
 {
 	public class Viewer : 
 		Forms.UserControl
@@ -37,12 +38,12 @@ namespace Example.ClickOverlay
 				// viewer
 				// 
 				this.vidview.Asynchronous = Settings.Asynchronous.SetNotify;
-				this.vidview.Arguments = "-d -r telnet://:23";
+				this.vidview.Arguments = "-r telnet://:23";
 				this.vidview.Dock = System.Windows.Forms.DockStyle.Fill;
 				this.vidview.Location = new System.Drawing.Point(0, 0);
 				this.vidview.Name = "viewer";
 				// Running as a separate process requires the NuGet package "Imint.Vidview.Window". 
-				this.vidview.SeparateProcess = false;
+				this.vidview.SeparateProcess = true;
 				this.vidview.Size = new System.Drawing.Size(800, 600);
 				this.vidview.TabIndex = 0;
 				this.vidview.Closed += System.Windows.Forms.Application.Exit;
@@ -54,12 +55,20 @@ namespace Example.ClickOverlay
 
 					(this.vidview.Viewer.Overlays["clickOverlay"] as IClickOverlay).PositionChanged += position =>
 					{
-						System.Windows.Forms.MessageBox.Show("Hello there!");
+						this.PositionChanged.Call(position);
+					};
+					this.ClientSizeChanged += (se, ev) =>
+					{
+						this.vidview.Viewer.Fit();
+						this.vidview.Viewer.Translation = new Kean.Math.Geometry2D.Single.Size();
 					};
 				};
 				this.Controls.Add(this.vidview);
 				this.ResumeLayout(false);
 			}
 		}
+
+		public event Action<Kean.Math.Geometry2D.Single.Point> PositionChanged;
+
 	}
 }

@@ -7,7 +7,7 @@ using Serializing = Attraction.Core.Serializing;
 using Svg = Attraction.Svg;
 using Platform = Kean.Platform;
 
-namespace Example.ClickOverlay
+namespace Example.QuadView
 {
 	public interface IClickOverlay :
 		Imint.Viewer.IOverlay

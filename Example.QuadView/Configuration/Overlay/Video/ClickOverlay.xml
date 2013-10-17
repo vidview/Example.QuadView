@@ -1,4 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Overlay type="Example.ClickOverlay:ClickOverlay" >
+<Overlay type="Example.QuadView:ClickOverlay" >
 	<Name>clickOverlay</Name>
 </Overlay>
