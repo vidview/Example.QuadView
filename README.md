@@ -1,7 +1,7 @@
 Example.Simple
 ==============
 
-Base from which other examples are created. Simple viewer that plays the test source test://photo when application is started.
+This example demonstrates an invisible overlay that covers the viewer and reacts to being clicked on. 
 
 Checking out:
 -------------

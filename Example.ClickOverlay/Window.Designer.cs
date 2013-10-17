@@ -1,4 +1,4 @@
-﻿namespace Example.Simple
+﻿namespace Example.ClickOverlay
 {
 	partial class Window
 	{
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.viewer = new Example.Simple.Viewer();
+			this.viewer = new Example.ClickOverlay.Viewer();
 			this.SuspendLayout();
 			// 
 			// viewer
