@@ -318,10 +318,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Configuration\Overlay\Video\CenterMark.xml">
+    <Content Include="Configuration\Overlay\Video\ClickOverlay.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configuration\Overlay\Video\ClickOverlay.xml">
+    <Content Include="Configuration\Gui\Vidview.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Imint.ico" />
