@@ -30,10 +30,10 @@
 		{
 			this.quadPanel = new System.Windows.Forms.TableLayoutPanel();
 			this.singlePanel = new System.Windows.Forms.Panel();
-			this.viewer1 = new Example.QuadView.Viewer();
-			this.viewer2 = new Example.QuadView.Viewer();
-			this.viewer3 = new Example.QuadView.Viewer();
-			this.viewer4 = new Example.QuadView.Viewer();
+			this.viewer1 = new Example.QuadView.Viewer(23);
+			this.viewer2 = new Example.QuadView.Viewer(24);
+			this.viewer3 = new Example.QuadView.Viewer(25);
+			this.viewer4 = new Example.QuadView.Viewer(26);
 			this.quadPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 

@@ -1,8 +1,8 @@
 ﻿using System;
 using Geometry2D = Kean.Math.Geometry2D;
 using Draw = Kean.Draw;
-using Kean.Core;
-using Kean.Core.Extension;
+using Kean;
+using Kean.Extension;
 using Serializing = Attraction.Core.Serializing;
 using Svg = Attraction.Svg;
 using Platform = Kean.Platform;
@@ -25,13 +25,13 @@ namespace Example.QuadView
 		}
 		public event Action<Geometry2D.Single.Point> PositionChanged;
 
-		protected override bool PointerLeftClick(Geometry2D.Single.Point position, bool pressed)
+		protected override bool PointerLeftClick(Geometry2D.Single.Point position)
 		{
 			this.Position = position;
 			return true;
 		}
 
-		protected override Imint.Viewer.ICache[] UpdateCaches(Imint.Viewer.ICache[] caches, Func<Draw.Image, Imint.Viewer.ICache> createCache, Kean.Core.Collection.IReadOnlyDictionary<string, object> meta)
+		protected override Imint.Viewer.Cache[] UpdateCaches(Imint.Viewer.Cache[] caches, Kean.Collection.IReadOnlyDictionary<string, object> meta)
 		{
 			return caches;
 		}

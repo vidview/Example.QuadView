@@ -1,7 +1,7 @@
 using System;
 using Forms = System.Windows.Forms;
 using Settings = Kean.Platform.Settings;
-using Kean.Core.Extension;
+using Kean.Extension;
 
 namespace Example.QuadView
 {
@@ -9,9 +9,11 @@ namespace Example.QuadView
 		Forms.UserControl
 	{
 		Imint.Vidview.Viewer vidview;
+		int port;
 
-		public Viewer()
+		public Viewer(int port = 23)
 		{
+			this.port = port;
 			this.InitializeComponent();
 			this.Load += (Object sender, EventArgs e) => Viewer_Load(sender, e);
 		}
@@ -38,12 +40,13 @@ namespace Example.QuadView
 				// viewer
 				// 
 				this.vidview.Asynchronous = Settings.Asynchronous.SetNotify;
-				this.vidview.Arguments = "-r telnet://:23";
+				this.vidview.Arguments = "-d -r telnet://:" + this.port;
 				this.vidview.Dock = System.Windows.Forms.DockStyle.Fill;
 				this.vidview.Location = new System.Drawing.Point(0, 0);
 				this.vidview.Name = "viewer";
 				// Running as a separate process requires the NuGet package "Imint.Vidview.Window". 
 				this.vidview.SeparateProcess = true;
+				this.vidview.OnDebug += (direction, message) => Console.WriteLine((direction ? "> " : "< ") + message);
 				this.vidview.Size = new System.Drawing.Size(800, 600);
 				this.vidview.TabIndex = 0;
 				this.vidview.Closed += System.Windows.Forms.Application.Exit;
@@ -51,11 +54,13 @@ namespace Example.QuadView
 				this.vidview.Started += () =>
 				{
 					if (!(this.vidview.Media != null && this.vidview.Media.Open("test://photo")))
+					{
 						this.vidview.Close();
-
+					}
 					(this.vidview.Viewer.Overlays["clickOverlay"] as IClickOverlay).PositionChanged += position =>
 					{
-						this.PositionChanged.Call(position);
+						if (position.NotNull())
+							this.PositionChanged.Call(position);
 					};
 					this.ClientSizeChanged += (se, ev) =>
 					{
