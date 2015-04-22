@@ -6,10 +6,10 @@ This example demonstrates a simple Quad View application where 4 video sources c
 Checking out:
 -------------
 TortoiseGit:
-Right-click in Explorer and select "Git Clone". Enter the URL https://github.com/vidview/Example.Simple.git
+Right-click in Explorer and select "Git Clone". Enter the URL https://github.com/vidview/Example.QuadView.git
 
 TortoiseSVN:
-Right-click in Explorer and select "SVN Checkout". Enter the URL https://github.com/vidview/Example.Simple.git/trunk
+Right-click in Explorer and select "SVN Checkout". Enter the URL https://github.com/vidview/Example.QuadView.git/trunk
 
 Getting started (Visual Studio 2012 Express):
 -------------------------------------
